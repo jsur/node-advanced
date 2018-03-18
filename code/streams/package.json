@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Azat Mardan (http://azat.co/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "google-translate-api": "^2.3.0",
+    "web3": "^0.20.6"
+  }
 }

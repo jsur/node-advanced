@@ -10,6 +10,7 @@ server.on('request', (req, res) => {
       res.end(data)
     })
   } else if (req.url === '/stream') {
+    // significantly smaller memory usage
     const src = fs.createReadStream(fileName)
     src.pipe(res)
   }
