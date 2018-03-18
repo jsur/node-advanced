@@ -1,6 +1,6 @@
 const fs = require('fs')
 const util = require('util')
-const f = async function () {
+async function f() {
   try {
     const data = await util.promisify(fs.readFile)('os.js', 'utf8') // <- try changing to non existent file to trigger an error
     console.log(data)
