@@ -8,6 +8,7 @@ const rubyEncrypt = spawn('ruby', ['encrypt.rb'], {
   stdio: 'ignore'
 })
 // This will finish this node.js process, but the ruby encryption will still be running
+// We know encryption is finished when the file is created
 rubyEncrypt.unref()
 
 console.timeEnd('launch encryption')

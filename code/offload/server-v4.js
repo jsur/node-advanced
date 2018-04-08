@@ -12,6 +12,10 @@ if (cluster.isMaster) {
     const worker = cluster.fork()
     console.log(`Started worker ${worker.process.pid}`)
   })
+  // fault tolerant way to handle process exits (kills)
+
+  // fork will always start a new process to avoid running out of processes
+  // running on all cpus
   cluster.on('exit', (worker, code, signal) => {
     if (signal) {
       console.log(`worker was killed by signal: ${signal}`);
